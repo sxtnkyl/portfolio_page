@@ -1,33 +1,63 @@
+/*COLOR SCHEME
+https://www.color-hex.com/color/0b2133 - DARK BLUE(heavy text) - #0b2133
+https://www.color-hex.com/color/859099 - dark gray(medium text) - #859099
+https://www.color-hex.com/color/b5bcc1 - medium gray(medium text shadow) - #b5bcc1
+https://www.color-hex.com/color/f7f8f8 - almost white(item bg) - #f7f8f8
+https://www.color-hex.com/color/ff7808 - highlight orange - #ff7808
+
+FONTS: https://fonts.google.com/specimen/Lato
+*/
+
+/*GENERAL STYLES*/
 .App {
-  text-align: center;
+  z-index: 10;
+  overflow: hidden;
+  font-size: 16px;
+  background: #859099;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.highlight-orange {
+  font-family: Lato;
+  font-stretch: expanded;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: #ff7808;
+  text-shadow: 1px 1px 1px #0b2133;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.highlight-blue {
+  font-family: Lato;
+  font-stretch: expanded;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: #0b2133;
+  text-shadow: 1px 1px 1px #0b2133;
+}
+
+.heavy {
+  font-family: Lato;
+  font-stretch: expanded;
+  font-weight: 900;
+  font-size: 1.8em;
+}
+
+.blue {
+  color: #0b2133;
+}
+
+.section-title {
+  font-size: 2.4em;
+}
+
+/*FLEX STYLES*/
+.flex-c {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*PRELOAD*/
+#preload {
+  display: none;
 }

@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-regular-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "react": "^16.8.6",
+    "react-compare-image": "^0.8.2",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-spring": "^8.0.25",
+    "react-waypoint": "^9.0.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "styled-components": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
