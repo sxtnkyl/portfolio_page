@@ -3,8 +3,8 @@ const tools = [
     category: "IDE/Scripting Languages",
     skills: [
       "Github/Gitbash",
-      "Visual Studio Code",
       "HTML",
+      "Visual Studio Code",
       "CSS",
       "JavaScript",
       "JS Canvas"

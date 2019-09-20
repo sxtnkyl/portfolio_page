@@ -3,55 +3,75 @@ import styled from "styled-components";
 
 const Section = styled.section`
   height: 100vh;
-  widows: 100vw;
-  background: #f7f8f8;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Header = styled(animated.div)`
-  width: 100vw;
-  background: #f7f8f8;
-`;
-
-const Title = styled(animated.h1)`
-  position: relative;
-  height: 10%;
-  top: 0%;
-  margin: 0;
-`;
-const Square = styled(animated.div)`
   width: 100%;
-  height: 10vh;
-  background: #0b2133;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const Triangle = styled(animated.div)`
-  width: 0;
-  height: 0;
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-top: 20vh solid #0b2133;
-`;
-
-const ContactInfo = styled(animated.div)`
-  width: 80%;
-  height: 55vh;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-`;
-const ContactIcon = styled(animated.div)`
-  height: 100%;
-  width: 25%;
+  background: #f7f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  @media (max-width: 768px) {
+    height: 120vh;
+  }
+  @media (max-width: 600px) {
+    height: 125vh;
+  }
+`;
+
+const Title = styled(animated.div)`
+  width: 100%;
+  height: 15vh;
+  background: #0b2133;
+  border: 2px solid #0b2133;
+  padding-left: 10%;
+  font-size: 2.4em;
+  line-height: 2.4em;
+  font-family: Lato;
+  font-stretch: expanded;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  color: #ff7808;
+  text-shadow: 1px 1px 1px #0b2133;
+  @media (max-width: 768px) {
+    font-size: 1.8em;
+  }
+  @media (max-width: 600px) {
+    padding-left: 0;
+    text-align: center;
+  }
+`;
+
+//http://apps.eky.hk/css-triangle-generator/
+const Triangle = styled(animated.div)`
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20vh 49.5vw 0 49.5vw;
+  border-color: #0b2133 transparent transparent transparent;
+`;
+
+const ContactInfo = styled(animated.div)`
+  margin-top: auto;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+const ContactIcon = styled(animated.div)`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   a {
+    width: auto;
     background: #859099;
     box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
     color: #0b2133;
@@ -59,45 +79,83 @@ const ContactIcon = styled(animated.div)`
     border-radius: 50%;
     cursor: pointer;
   }
-  a:link {
+  a:link,
+  a:visited,
+  a:active {
     text-decoration: none;
     background: #0b2133;
-  }
-  a:visited {
-    background: #0b2133;
+    color: #0b2133;
   }
   a:hover {
-    color: #0b2133;
     background-color: #f7f8f8;
   }
   #info {
+    width: 100%;
     color: #0b2133;
+    #phone,
+    #email {
+      font-family: Lato;
+      font-stretch: expanded;
+      font-weight: 900;
+      font-size: 1.8em;
+      letter-spacing: 0.8px;
+      @media (max-width: 768px) {
+        font-size: 1em;
+      }
+      @media (max-width: 600px) {
+        font-size: 0.7em;
+      }
+    }
     #reveal {
+      width: auto;
       overflow: hidden;
+      @media (max-width: 600px) {
+        font-size: 0.7em;
+      }
+      #highlight {
+        font-family: Lato;
+        font-stretch: expanded;
+        font-style: italic;
+        font-weight: 900;
+        letter-spacing: 0.8px;
+        color: #ff7808;
+        text-shadow: 1px 1px 1px #0b2133;
+        @media (max-width: 768px) {
+          font-size: 1em;
+        }
+        @media (max-width: 600px) {
+          font-size: 0.8em;
+        }
+      }
     }
   }
 `;
 
-const BottomSquare = styled(animated.div)`
-  width: 100vw;
-  height: 10vh;
+const BottomBar = styled(animated.div)`
+  margin-top: auto;
+  height: 11%;
+  width: 100%;
   background: #0b2133;
   box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
-  text-align: center;
+  align-self: flex-end;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 12vw;
+  justify-content: space-evenly;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const BotIcon = styled(animated.div)`
+  flex: 1 1 1;
   a {
     opacity: 0.85;
     color: #859099;
-    padding: 7px;
-    margin: auto 7px;
+    padding: 10px;
     border-radius: 50px;
-    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out,
+      opacity 0.5s ease-out;
   }
   a:link {
     text-decoration: none;
@@ -107,38 +165,18 @@ const BotIcon = styled(animated.div)`
     color: #859099;
   }
   a:hover {
-    color: #859099;
-    background-color: #e6e8ea;
-  }
-`;
-
-const ToTopArrow = styled(animated.div)`
-  height: 30px;
-  width: 30px;
-  background: #ff7808;
-  border-radius: 50px;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  .totopclass {
-    background: ;
-    padding-top: 3px;
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
     color: #0b2133;
+    background-color: #e6e8ea;
+    opacity: 1;
   }
 `;
 
 export {
   Section,
-  Header,
   Title,
-  Square,
   Triangle,
   ContactInfo,
   ContactIcon,
-  BottomSquare,
-  BotIcon,
-  ToTopArrow
+  BottomBar,
+  BotIcon
 };

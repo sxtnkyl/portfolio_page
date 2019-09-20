@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useSpring, useTransition, animated, config } from "react-spring";
-import "./projects.css";
+import { useSpring, animated } from "react-spring";
 import { Content } from "./projectsStyles";
 
 const Itemcontent = props => {
@@ -16,10 +15,8 @@ const Itemcontent = props => {
   //passes individual item for hover to locate itself, instead of all mapped items
   const { item } = props;
 
-  // thumbnail wrapper with thumbnail, card cover, card peel
-
   return (
-    <Content>
+    <Content onClick={props.onClick} style={props.style}>
       <div id="project-title">{item.name}</div>
       <div id="thumbnail-wrapper">
         <div id="card-summary">{item.summary}</div>
@@ -28,16 +25,16 @@ const Itemcontent = props => {
           src={item.thumbnail}
           style={slideSummary}
         />
+        <div
+          id="card-peel"
+          onMouseEnter={e => {
+            setShow(true);
+          }}
+          onMouseLeave={e => {
+            setShow(false);
+          }}
+        />
       </div>
-      <div
-        id="card-peel"
-        onMouseEnter={e => {
-          setShow(true);
-        }}
-        onMouseLeave={e => {
-          setShow(false);
-        }}
-      />
     </Content>
   );
 };

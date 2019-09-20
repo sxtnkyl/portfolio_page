@@ -17,7 +17,7 @@ const Togglenavbutton = props => {
   return (
     <ToggleNavContainer style={togglenavHover}>
       <FontAwesomeIcon
-        className="togglenavbutton"
+        id="togglenavbutton"
         icon={["fas", "bars"]}
         size="2x"
         onMouseEnter={e => {

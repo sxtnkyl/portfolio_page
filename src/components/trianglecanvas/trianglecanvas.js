@@ -41,7 +41,7 @@ class Trianglecanvas extends Component {
       mouseY = dimensions[1] / 2;
 
       //size of triangles
-      radius = 30;
+      radius = 40;
 
       //center of circle coords
       //cx: half triangle side. cy: triangle height

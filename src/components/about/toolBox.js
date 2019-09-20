@@ -1,36 +1,32 @@
-//functional component that takes an array containing the different "drawers"(objects) and displays the selected drawer's contents
-//tr = table rows
-//td = table columns
+//functional component that takes an array containing the different "drawers"(objects) from TOOLS and displays the selected drawer's contents
+//id "tc" = table cell
 import React, { useState, useEffect } from "react";
 import tools from "./Tools";
-import { animated, config, useTrail, useTransition } from "react-spring";
+import { animated, useTrail } from "react-spring";
 
 //WORKING VERSION
-//rewrite of rewrite for toggle. trail is not repeating on list change. issue is DOM rerender?
-//////////////make selected state, update trail on hover
+//rewrite of rewrite for toggle.
+//trail animation updates on state change, future task: update trail on hover
 //https://codesandbox.io/s/kw79lw0757 REVERSE TRAIL
 const Toolbox = () => {
   //hold the active list, adds style border button to show selected list
   //in tag, className={active === id ? active : button}
   const [active, setActive] = useState(tools[0].category);
   useEffect(() => {
-    console.log("active button is", active);
+    //console.log("active button is", active);
   }, [active]);
   //rerenders trail animation
   const [toggle, set] = useState(true);
   useEffect(() => {
-    console.log(toggle);
+    //console.log(toggle);
   }, [toggle]);
   //which list are we looking at?
   const [list, setList] = useState(tools[0].skills);
   useEffect(() => {
-    console.log("list updated", list);
+    //console.log("list updated", list);
   }, [list]);
 
-  const config = { mass: 5, tension: 2000, friction: 200 };
-
   const trail = useTrail(list.length, {
-    config,
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : 20,
     height: toggle ? 80 : 0,

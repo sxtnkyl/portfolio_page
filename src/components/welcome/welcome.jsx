@@ -1,23 +1,15 @@
-import React, {
-  useState,
-  useEffect,
-  forwardRef,
-  useImperativeHandle
-} from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import {
   Section,
   Welcometext,
   BtnContainer,
-  ViewWork,
-  ViewWorkBtn
+  ViewAbout,
+  ViewAboutBtn
 } from "./welcomeStyles";
 import { useSpring } from "react-spring";
 import useMeasure from "../useMeasure";
 import useIntersection from "../intersectionHook";
 
-//https://philna.sh/blog/2018/09/27/techniques-for-animating-on-the-canvas-in-react/
-//https://codepen.io/onion2k/pen/RmQVbM
-//draws equilateral triangles over canvas, removed by mouseover
 const Welcome = forwardRef((props, ref) => {
   const { observerEntry, elRef } = useIntersection({ threshold: 0.01 });
   useImperativeHandle(ref, () => ({
@@ -28,7 +20,8 @@ const Welcome = forwardRef((props, ref) => {
 
   const [hover, setHover] = useState(false);
   const [bind, { width }] = useMeasure();
-  const viewWorkHover = useSpring({
+
+  const viewAboutHover = useSpring({
     width: hover ? width : 0
   });
 
@@ -41,7 +34,7 @@ const Welcome = forwardRef((props, ref) => {
       </Welcometext>
       <BtnContainer>
         <a href="#about">
-          <ViewWork
+          <ViewAbout
             {...bind}
             onMouseEnter={e => {
               setHover(true);
@@ -51,8 +44,8 @@ const Welcome = forwardRef((props, ref) => {
             }}
           >
             About Me
-            <ViewWorkBtn style={viewWorkHover} />
-          </ViewWork>
+            <ViewAboutBtn style={viewAboutHover} />
+          </ViewAbout>
         </a>
       </BtnContainer>
     </Section>

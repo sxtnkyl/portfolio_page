@@ -18,9 +18,10 @@ const projects = [
     name: "Calculator",
     summary: "A React calculator with some additional functionality",
     description:
-      "This calculator uses React to accept mouse click or keypress to perform basic arithmetic. Multiple values and numbers can be stored or removed while entry errors return error messages. Special React concepts include event listeners for keypress/click, lifecycle methods, and resetting initial state.",
+      "This React calculator accepts mouse click or keypress to perform basic arithmetic. Multiple values and numbers can be stored or removed while entry errors return error messages. React concepts include event listeners for keypress/click, lifecycle methods, and resetting initial state.",
     css: "teal",
-    concepts: "React, Initial-State Callback, Error-responsiveness",
+    concepts:
+      "React, Event Listeners, React Lifecycle, Initial-State Callback, Error-responsiveness",
     thumbnail: calculator,
     codepenUrl: "https://codepen.io/sxtnkyl/pen/eowRGx",
     githubUrl: "https://github.com/sxtnkyl/fcc-calculator"

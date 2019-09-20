@@ -16,10 +16,7 @@ const Leftnavdrawer = props => {
 
   return (
     <LeftNavDrawer style={navDrawerSlide}>
-      <Top>
-        <div className="profile-pic">
-          <div id="pic" src="" alt="" />
-        </div>
+      <Top id="topNav">
         <div className="name-title">
           <h1>Kyle Sexton</h1>
           <h6>Fullstack Web Developer</h6>

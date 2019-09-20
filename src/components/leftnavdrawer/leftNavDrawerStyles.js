@@ -2,6 +2,7 @@ import { animated } from "react-spring";
 import styled from "styled-components";
 
 const LeftNavDrawer = styled(animated.nav)`
+  overflow: hidden;
   background: #0b2133;
   color: #e6e8ea;
   box-shadow: 2px 0px 7px #b5bcc1;
@@ -9,11 +10,21 @@ const LeftNavDrawer = styled(animated.nav)`
   z-index: 151;
   height: 100vh;
   width: 30vw;
+  min-width: 300px;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 992px) {
+    width: 40vw;
+  }
+  @media (max-width: 768px) {
+    width: 50vw;
+  }
+  @media (max-width: 600px) {
+    width: 70vw;
+  }
 `;
 
 const Top = styled.div`
@@ -21,26 +32,12 @@ const Top = styled.div`
   height: 20%;
   background: none;
   display: flex;
-  flex-direction: row;
-  .profile-pic {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    #pic {
-      background: white;
-      box-shadow: 1px 1px 2px #b5bcc1;
-      border-radius: 50%;
-      height: 80%;
-      width: 80%;
-    }
-  }
+
   .name-title {
-    width: 60%;
+    flex: 1 1 50%;
     background: none;
     text-align: right;
     padding-right: 7%;
-    background: none;
     h1 {
       font-family: Roboto;
       font-size: 2.1em;
@@ -50,6 +47,9 @@ const Top = styled.div`
       font-weight: 900;
       line-height: 1em;
       color: #ff7808;
+      @media (max-width: 1360px) {
+        font-size: 1.7em;
+      }
     }
     h6 {
       font-family: Lato;
@@ -58,6 +58,9 @@ const Top = styled.div`
       font-weight: 700;
       line-height: 0;
       letter-spacing: -0.6px;
+      @media (max-width: 1360px) {
+        font-size: 0.7em;
+      }
     }
   }
 `;
@@ -110,6 +113,7 @@ const NavItemList = styled.div`
 const Bottom = styled.div`
   background: none;
   height: 10%;
+  margin-bottom: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

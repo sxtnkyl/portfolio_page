@@ -10,6 +10,7 @@ import Backdrop from "./components/backdrop/backdrop";
 import Togglenavbutton from "./components/togglenavbutton/togglenavbutton";
 import Trianglecanvas from "./components/trianglecanvas/trianglecanvas";
 import DownArrowButton from "./components/downarrow/downArrow";
+import UpArrow from "./components/uparrow/upArrow";
 
 const App = () => {
   const [navbarCount, setNavBarCount] = useState();
@@ -79,6 +80,7 @@ const App = () => {
       <Backdrop click={backdropClick} showing={leftnavdraweropen} />
       <Togglenavbutton click={opencloseLeftnav} showing={leftnavdraweropen} />
       <DownArrowButton click={getView} />
+      <UpArrow />
 
       <div id="sections">
         <Welcome ref={welcomeRef} />

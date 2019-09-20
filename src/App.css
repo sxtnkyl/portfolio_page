@@ -6,14 +6,42 @@ https://www.color-hex.com/color/f7f8f8 - almost white(item bg) - #f7f8f8
 https://www.color-hex.com/color/ff7808 - highlight orange - #ff7808
 
 FONTS: https://fonts.google.com/specimen/Lato
+
+responsive breakpoints: 600px, 768px, 992px
+min-width= this width or more, do this
+max-width= this width or less, do this
+
+**768px size for section reorg.; All section titles to 1.8em
+
+@media only screen and (max-width: 600px) {
+  div {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  div {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  div {
+    font-size: 30px;
+  }
+}
+
+normal css ~ 1280
+
+FLEXBOX TRICKS
+https://www.w3schools.com/css/css3_flexbox.asp
+https://stackoverflow.com/questions/32551291/in-css-flexbox-why-are-there-no-justify-items-and-justify-self-properties/33856609#33856609
 */
 
 /*GENERAL STYLES*/
 .App {
   z-index: 10;
-  overflow: hidden;
-  font-size: 16px;
+  font-size: 26px;
   background: #859099;
+  cursor: default;
 }
 
 .highlight-orange {
@@ -41,6 +69,7 @@ FONTS: https://fonts.google.com/specimen/Lato
   font-stretch: expanded;
   font-weight: 900;
   font-size: 1.8em;
+  letter-spacing: 0.8px;
 }
 
 .blue {
@@ -49,12 +78,6 @@ FONTS: https://fonts.google.com/specimen/Lato
 
 .section-title {
   font-size: 2.4em;
-}
-
-/*FLEX STYLES*/
-.flex-c {
-  display: flex;
-  flex-direction: column;
 }
 
 /*PRELOAD*/

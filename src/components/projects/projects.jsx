@@ -4,12 +4,12 @@ import React, {
   forwardRef,
   useImperativeHandle
 } from "react";
-import { useTransition, useSpring, useChain, animated } from "react-spring";
-import { Section, Title, Grid, Item, Singleitem } from "./projectsStyles";
-import "./projects.css";
+import { useTransition, useSpring, useChain } from "react-spring";
+import { Section, Title, Grid } from "./projectsStyles";
 import projects from "./projectData";
 import Itemcontent from "./itemContent";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SingleItem from "./singleItem";
+
 import useIntersection from "../intersectionHook";
 
 const Projects = forwardRef((props, ref) => {
@@ -19,18 +19,19 @@ const Projects = forwardRef((props, ref) => {
       return observerEntry;
     }
   }));
-  //open = all projects showing, closed = selectedItem showing
+  //true = all projects showing, false = showing single selectedItem
   const [open, setOpen] = useState(true);
+  function closeSingleItem() {
+    setOpen(true);
+  }
 
   //hook to hold single project that was selected
   const [selectedItem, setSelectedItem] = useState(projects[0]);
-  // useEffect(() => {
-  //   console.log(selectedItem);
-  // }, [selectedItem]);
 
   //give our transition animation to each project in projects arr
+  //this is for shrinking each small item
   const gridRef = useRef();
-  const openAllProjects = useTransition(
+  const AllProjectsTransition = useTransition(
     open ? projects : [],
     item => item.name,
     {
@@ -41,37 +42,43 @@ const Projects = forwardRef((props, ref) => {
     }
   );
 
-  //map each projects to the styled compenent Item(in styles), put it in the grid styled component
-  const allProjects = openAllProjects.map(
+  //quick fix for scrolling back to projects in viewport > 100vh. smooth out later.
+  function scrollup() {
+    document.location.href = "#projects";
+  }
+  //map each project to a styled compenent <Item>, put it in the <Grid> styled component
+  //call args as obj to call "props" animation as "gridtransition"
+  const allProjects = AllProjectsTransition.map(
     ({ item, props: gridtransition, key }) => (
-      <Item
+      <Itemcontent
         key={key}
         id={item.name}
+        item={item}
         style={gridtransition}
         onClick={e => {
           setSelectedItem(projects.find(obj => obj.name === item.name));
           setOpen(false);
+          scrollup();
         }}
-      >
-        <Itemcontent item={item} />
-      </Item>
+      />
     )
   );
 
-  //spring for enlarging the selected item
+  //spring for enlarging/shrinking the selected item- passed to <SingleItem>
   const selectedItemRef = useRef();
   const singleitemspring = useSpring({
     ref: selectedItemRef,
     transform: open ? "scale(0)" : "scale(1)"
   });
 
-  //spring for scaling up the grid height
+  //spring for scaling up the <Grid> height
   const gridHeightSpring = useRef();
   const gridspring = useSpring({
     ref: gridHeightSpring,
     transform: open ? "scale(1)" : "scale(0)"
   });
 
+  ////*ORDER OF OPERATIONS* grid items shrink, grid shrinks, singleitem grows
   useChain(
     open
       ? [selectedItemRef, gridRef, gridHeightSpring]
@@ -79,78 +86,17 @@ const Projects = forwardRef((props, ref) => {
     [0, open ? 0.75 : 0.75]
   );
 
-  const [hover, setHover] = useState(false);
-  const hoverIcon = useSpring({
-    transform: hover ? "scale(1.2)" : "scale(1)"
-  });
-
-  //what Singleitem component will display
-  const singleTileItem = (
-    <animated.div id="singleitem-inner">
-      <FontAwesomeIcon
-        id="close"
-        icon={["fas", "grip-horizontal"]}
-        size="lg"
-        onClick={() => setOpen(true)}
-      />
-      <div className="highlight-blue" id="si-project-title">
-        {selectedItem.name}
-      </div>
-      <div id="not-title">
-        <div id="si-leftside">
-          <img id="si-thumbnail" src={selectedItem.thumbnail} />
-        </div>
-        <div id="si-rightside">
-          <div id="si-itemtext">{selectedItem.description}</div>
-          <div id="si-concepts">UTILIZES: {selectedItem.concepts}</div>
-          <div id="si-links">
-            <animated.a
-              id="si-github"
-              href={selectedItem.github}
-              style={hoverIcon}
-            >
-              <FontAwesomeIcon
-                id="si-github-icon"
-                icon={["fab", "github"]}
-                size="lg"
-                onMouseEnter={e => {
-                  setHover(true);
-                }}
-                onMouseLeave={e => {
-                  setHover(false);
-                }}
-              />
-            </animated.a>
-            <animated.a
-              id="si-codepen"
-              style={hoverIcon}
-              href={selectedItem.codepenUrl}
-            >
-              <FontAwesomeIcon
-                id="si-codepen-icon"
-                icon={["fab", "codepen"]}
-                size="lg"
-                onMouseEnter={e => {
-                  setHover(true);
-                }}
-                onMouseLeave={e => {
-                  setHover(false);
-                }}
-              />
-            </animated.a>
-          </div>
-        </div>
-      </div>
-    </animated.div>
-  );
-
   const title = open ? "PROJECTS" : null;
 
   return (
-    <Section id="projects" ref={elRef}>
-      <Title className="highlight-blue section-title">{title}</Title>
+    <Section id="projects" ref={elRef} open={open}>
+      <Title>{title}</Title>
       <Grid style={gridspring}>{allProjects}</Grid>
-      <Singleitem style={singleitemspring}>{singleTileItem}</Singleitem>
+      <SingleItem
+        style={singleitemspring}
+        selectedItem={selectedItem}
+        close={closeSingleItem}
+      />
     </Section>
   );
 });
