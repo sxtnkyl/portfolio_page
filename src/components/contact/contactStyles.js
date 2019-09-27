@@ -70,7 +70,7 @@ const ContactIcon = styled(animated.div)`
   @media (max-width: 768px) {
     width: 100%;
   }
-  a {
+  #icon {
     width: auto;
     background: #859099;
     box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
@@ -79,14 +79,7 @@ const ContactIcon = styled(animated.div)`
     border-radius: 50%;
     cursor: pointer;
   }
-  a:link,
-  a:visited,
-  a:active {
-    text-decoration: none;
-    background: #0b2133;
-    color: #0b2133;
-  }
-  a:hover {
+  #icon:hover {
     background-color: #f7f8f8;
   }
   #info {

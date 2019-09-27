@@ -8,7 +8,6 @@ import "./App.css";
 import Leftnavdrawer from "./components/leftnavdrawer/leftNavDrawer";
 import Backdrop from "./components/backdrop/backdrop";
 import Togglenavbutton from "./components/togglenavbutton/togglenavbutton";
-import Trianglecanvas from "./components/trianglecanvas/trianglecanvas";
 import DownArrowButton from "./components/downarrow/downArrow";
 import UpArrow from "./components/uparrow/upArrow";
 
@@ -88,7 +87,6 @@ const App = () => {
         <Projects ref={projectsRef} />
         <Contact ref={contactRef} />
       </div>
-      <Trianglecanvas />
       <Preload />
     </div>
   );

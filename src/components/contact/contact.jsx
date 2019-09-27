@@ -36,13 +36,13 @@ const Contact = forwardRef((props, ref) => {
   const contactIcons = (
     <ContactInfo id="ContactInfo">
       <ContactIcon id="left">
-        <a>
-          <FontAwesomeIcon
-            icon={["fas", "phone"]}
-            size="5x"
-            onClick={() => openPhone(!phone)}
-          />
-        </a>
+        <FontAwesomeIcon
+          id="icon"
+          icon={["fas", "phone"]}
+          size="5x"
+          onClick={() => openPhone(!phone)}
+        />
+
         <div id="info">
           <div id="phone">Want to chat?</div>
           <animated.div id="reveal" style={revealPhone}>
@@ -53,13 +53,13 @@ const Contact = forwardRef((props, ref) => {
       </ContactIcon>
 
       <ContactIcon id="right">
-        <a>
-          <FontAwesomeIcon
-            icon={["fas", "envelope"]}
-            size="5x"
-            onClick={() => openEmail(!email)}
-          />
-        </a>
+        <FontAwesomeIcon
+          id="icon"
+          icon={["fas", "envelope"]}
+          size="5x"
+          onClick={() => openEmail(!email)}
+        />
+
         <div id="info">
           <div id="email">Send a message!</div>
           <animated.div id="reveal" style={revealEmail}>

@@ -130,15 +130,15 @@ class Trianglecanvas extends Component {
     init();
     draw();
 
-    window.addEventListener("mousemove", e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
+    // window.addEventListener("mousemove", e => {
+    //   mouseX = e.clientX;
+    //   mouseY = e.clientY;
+    // });
 
-    window.addEventListener("touchmove", e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
+    // window.addEventListener("touchmove", e => {
+    //   mouseX = e.clientX;
+    //   mouseY = e.clientY;
+    // });
 
     window.addEventListener("resize", () => {
       init();

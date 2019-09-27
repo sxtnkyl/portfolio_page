@@ -46,17 +46,17 @@ const BtnContainer = styled.div`
   border: 3px solid #e6e8ea;
   text-align: center;
   @media (max-width: 992px) {
-    font-size: 1.3em;
-    width: 20%;
-    height: 10%;
-  }
-  @media (max-width: 768px) {
     font-size: 1em;
     width: 20%;
     height: auto;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     font-size: 0.8em;
+    width: 20%;
+    height: auto;
+  }
+  @media (max-width: 600px) {
+    font-size: 0.6em;
     width: 40%;
     height: auto;
   }

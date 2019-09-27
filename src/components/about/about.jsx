@@ -4,7 +4,7 @@ import { Section, Title, Slider, Left, Right } from "./aboutstyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useIntersection from "../intersectionHook";
 import Toolbox from "./toolBox";
-import fullstack_resume from "../../images/Kyle_Sexton_fullstack_resume.docx";
+import fullstack_resume from "../../images/Kyle_Sexton_fullstack.docx";
 import portrait from "../../images/portrait.PNG";
 
 const About = forwardRef((props, ref) => {
@@ -67,7 +67,7 @@ const About = forwardRef((props, ref) => {
     slide ? (
       <Slider id="summarySlide" style={props} key={key}>
         <Left>
-          <img id="portrait" src={portrait} />
+          <img id="portrait" src={portrait} alt="portrait" />
         </Left>
         <Right>
           <div className="heavy highlight-orange" id="thisIsMe">
@@ -84,7 +84,13 @@ const About = forwardRef((props, ref) => {
         <Left>
           {skillsStory}
           <div id="resumeLinkandArrow">
-            <a id="resumeLink" href={fullstack_resume} target="_blank">
+            <a
+              id="resumeLink"
+              href={fullstack_resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              alt="resume link"
+            >
               Download Kyle's Resume
             </a>
             <FontAwesomeIcon

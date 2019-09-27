@@ -18,7 +18,11 @@ const SingleItem = props => {
       />
       <div id="si-project-title">{props.selectedItem.name}</div>
       <div id="item-info">
-        <img id="si-thumbnail" src={props.selectedItem.thumbnail} />
+        <img
+          id="si-thumbnail"
+          src={props.selectedItem.thumbnail}
+          alt={props.selectedItem.name}
+        />
 
         <div id="si-rightside">
           <div id="si-itemtext">{props.selectedItem.description}</div>
