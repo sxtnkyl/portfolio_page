@@ -28,7 +28,6 @@ const Welcome = forwardRef((props, ref) => {
 
   return (
     <Section id="welcome" ref={elRef}>
-      <Trianglecanvas />
       <Welcometext>
         Hello my name is <span className="highlight-orange">Kyle Sexton</span>.
         <br />
