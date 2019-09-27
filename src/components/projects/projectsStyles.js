@@ -107,6 +107,7 @@ const Content = styled(animated.div)`
       width: 100%;
       height: 100%;
       z-index: 51;
+      cursor: pointer;
     }
     #card-summary {
       width: 100%;
@@ -131,7 +132,7 @@ const Content = styled(animated.div)`
       border-right: 30px solid white;
       position: absolute;
       right: 0;
-      bottom: 1px;
+      bottom: 0;
       z-index: 53;
       cursor: pointer;
     }
@@ -295,7 +296,7 @@ const Singleitem = styled(animated.div)`
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         @media (max-width: 1600px) {
           height: 10%;
         }
@@ -304,24 +305,20 @@ const Singleitem = styled(animated.div)`
         }
         #si-github {
           height: 100%;
-          width: 50%;
+          width: 25%;
           #si-github-icon {
             height: 100%;
-            width: 35%;
-            color: #0b2133;
-            cursor: pointer;
+            width: 100%;
             filter: drop-shadow(1px 1px 2px #b5bcc1)
               drop-shadow(3px 3px #b5bcc1);
           }
         }
         #si-codepen {
           height: 100%;
-          width: 50%;
+          width: 25%;
           #si-codepen-icon {
             height: 100%;
-            width: 35%;
-            color: #0b2133;
-            cursor: pointer;
+            width: 100%;
             filter: drop-shadow(1px 1px 2px #b5bcc1)
               drop-shadow(3px 3px #b5bcc1);
           }

@@ -35,7 +35,7 @@ const projects = [
     concepts: "React, Conditional-rendering/styling, Audio Integration",
     thumbnail: drumkit,
     codepenUrl: "https://codepen.io/sxtnkyl/pen/WmKodW",
-    githubUrl: ""
+    githubUrl: "https://github.com/sxtnkyl/drumkit"
   },
   {
     name: "Markdown Previewer",
@@ -81,7 +81,7 @@ const projects = [
       "React, React-spring, Custom-hooks, Ref handling, Styled-components, JS Canvas",
     thumbnail: portfolio_page,
     codepenUrl: "",
-    githubUrl: ""
+    githubUrl: "https://github.com/sxtnkyl/portfolio_page"
   }
 ];
 
