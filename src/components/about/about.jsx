@@ -4,7 +4,7 @@ import { Section, Title, Slider, Left, Right } from "./aboutstyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useIntersection from "../intersectionHook";
 import Toolbox from "./toolBox";
-import fullstack_resume from "../../images/Kyle_Sexton_fullstack.docx";
+import fullstack_resume from "../../images/Kyle_Sexton_fullstack.pdf";
 import portrait from "../../images/portrait.PNG";
 
 const About = forwardRef((props, ref) => {

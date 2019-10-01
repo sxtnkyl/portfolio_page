@@ -32,9 +32,12 @@ const Welcometext = styled.div`
     font-size: 1em;
   }
   @media (max-width: 600px) {
-    font-size: 0.9em;
-    width: 60%;
+    font-size: 0.8em;
+    width: 80%;
     padding-bottom: 10%;
+  }
+  #name {
+    white-space: no-wrap;
   }
 `;
 
@@ -78,7 +81,7 @@ const ViewAbout = styled.div`
   letter-spacing: 0.8px;
   font-weight: 600;
   line-height: 2.2em;
-  :hover {
+  &:hover {
     color: #0b2133;
   }
 `;

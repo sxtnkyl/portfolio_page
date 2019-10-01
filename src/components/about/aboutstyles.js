@@ -65,6 +65,15 @@ const Slider = styled(animated.div)`
   @media (max-width: 600px) {
     font-size: 0.5em;
   }
+  &#skillsSlide {
+    @media (max-width: 768px) {
+      font-size: 0.6em;
+      flex-direction: column-reverse;
+      margin-top: 3%;
+    }
+    @media (max-width: 600px) {
+      font-size: 0.5em;
+    }
   }
 `;
 
@@ -83,6 +92,9 @@ const Left = styled.div`
     border: solid 2px #0b2133;
     border-radius: 2px;
     background: #b5bcc1;
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
   }
 
   #mySkills {
@@ -93,6 +105,9 @@ const Left = styled.div`
     font-size: 0.8em;
     font-weight: 600;
     color: #0b2133;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
   }
   #resumeLinkandArrow {
     width: 100%;
@@ -186,7 +201,6 @@ const Right = styled.div`
     flex-direction: column;
     justify-content: space-around;
     @media (max-width: 768px) {
-      flex-direction: row;
       align-items: center;
     }
     #skillsSelectorButtons {
@@ -196,9 +210,8 @@ const Right = styled.div`
       height: 10%;
       width: 100%;
       @media (max-width: 768px) {
-        flex-direction: column;
-        width: 40%;
-        height: 60%;
+        height: 50%;
+        width: 80%;
       }
       .active {
         background: #ff7808 !important;

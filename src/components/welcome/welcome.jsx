@@ -30,7 +30,12 @@ const Welcome = forwardRef((props, ref) => {
     <Section id="welcome" ref={elRef}>
       <Trianglecanvas />
       <Welcometext>
-        Hello my name is <span className="highlight-orange">Kyle Sexton</span>.
+        Hello, my name is
+        <br />{" "}
+        <span className="highlight-orange" id="name">
+          Kyle Sexton
+        </span>
+        .
         <br />
         Welcome to my portfolio.
       </Welcometext>
