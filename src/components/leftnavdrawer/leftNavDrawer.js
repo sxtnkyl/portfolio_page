@@ -25,7 +25,7 @@ const Leftnavdrawer = props => {
       <NavItemList>{props.navbarItems}</NavItemList>
       <Bottom>
         <div className="boticon">
-          <a href="https://codepen.io/">
+          <a href="https://codepen.io/sxtnkyl">
             <FontAwesomeIcon icon={["fab", "codepen"]} size="lg" />
           </a>
         </div>

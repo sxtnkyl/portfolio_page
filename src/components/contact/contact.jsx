@@ -74,7 +74,7 @@ const Contact = forwardRef((props, ref) => {
   const bottomIcons = (
     <BottomBar>
       <BotIcon>
-        <a href="https://codepen.io/">
+        <a href="https://codepen.io/sxtnkyl">
           <FontAwesomeIcon icon={["fab", "codepen"]} size="lg" />
         </a>
       </BotIcon>
