@@ -64,7 +64,7 @@ const projects = [
     summary:
       "Simple Url shortener to convert any http url into a six character code",
     description:
-      "A full-stack project utilizing front-end React, Express API, and postgreSQL for back-end database. The user sumbits a url, where the API checks the database for a match to an existing entry. If the sumbitted url is new, a six character code is generated using the first and last three characters of a sha256 hashing result.",
+      "A full-stack project utilizing front-end React, Express API, and postgreSQL for back-end database. The user submits a url, where the API checks the database for a match to an existing entry. If the submitted url is new, a six character code is generated using the first and last three characters of a sha256 hashing result.",
     css: "blue",
     concepts: "CORS, Dotenv, Express, Nodemon, Hashing, PostgreSQL",
     thumbnail: construction_cone,
