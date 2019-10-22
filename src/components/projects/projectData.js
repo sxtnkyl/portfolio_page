@@ -4,7 +4,7 @@ import markdown_previewer from "../../images/thumbnails/markdown_previewer.png";
 import pomodoro from "../../images/thumbnails/pomodoro.png";
 import portfolio_page from "../../images/thumbnails/portfolio_page.png";
 
-import construction_cone from "../../images/thumbnails/construction_cone.jpg";
+import construction from "../../images/thumbnails/construction.PNG";
 
 const projects = [
   //name:item title
@@ -67,7 +67,7 @@ const projects = [
       "A full-stack project utilizing front-end React, Express API, and postgreSQL for back-end database. The user submits a url, where the API checks the database for a match to an existing entry. If the submitted url is new, a six character code is generated using the first and last three characters of a sha256 hashing result.",
     css: "blue",
     concepts: "CORS, Dotenv, Express, Nodemon, Hashing, PostgreSQL",
-    thumbnail: construction_cone,
+    thumbnail: construction,
     codepenUrl: "",
     githubUrl: "https://github.com/sxtnkyl/urlAPI"
   },

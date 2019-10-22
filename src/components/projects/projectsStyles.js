@@ -200,6 +200,7 @@ const Singleitem = styled(animated.div)`
       font-size: 1.6em;
     }
     @media (max-width: 600px) {
+      font-size: 1.2em;
       text-align: center;
     }
   }
@@ -237,6 +238,7 @@ const Singleitem = styled(animated.div)`
 
     #si-rightside {
       height: 80%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -323,6 +325,9 @@ const Singleitem = styled(animated.div)`
               drop-shadow(3px 3px #b5bcc1);
           }
         }
+      }
+      @media (max-width: 992px) {
+        width: 80%;
       }
     }
   }
