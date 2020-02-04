@@ -3,7 +3,7 @@ import drumkit from "../../images/thumbnails/drumkit.png";
 import markdown_previewer from "../../images/thumbnails/markdown_previewer.png";
 import pomodoro from "../../images/thumbnails/pomodoro.png";
 import portfolio_page from "../../images/thumbnails/portfolio_page.png";
-
+import drill from "../../images/thumbnails/drill.jpg";
 import construction from "../../images/thumbnails/construction.PNG";
 
 const projects = [
@@ -38,15 +38,16 @@ const projects = [
     githubUrl: "https://github.com/sxtnkyl/drumkit"
   },
   {
-    name: "Markdown Previewer",
-    summary: "A Markdown editor with realtime preview",
+    name: "HandSampler",
+    summary: "A survey tool for quickly generating geologic soil descriptions.",
     description:
-      "A simple Markdown previewer. Input the Markdown language in the editor side and have it converted and displayed on the previewer side.",
-    css: "#292b2c",
-    concepts: "React, Markdown, Bootstrap",
-    thumbnail: markdown_previewer,
-    codepenUrl: "https://codepen.io/sxtnkyl/pen/KEMqPb",
-    githubUrl: "https://github.com/sxtnkyl/react-markdown-fcc"
+      "An exercise in Material-UI and forms. Progress through a series of questions with different submission methods and layouts to generate a soil sample name.",
+    css: "grey",
+    concepts:
+      "React, Material-UI, Material-theming, Material-Design Principles",
+    thumbnail: drill,
+    codepenUrl: "",
+    githubUrl: "https://github.com/sxtnkyl/handsampler"
   },
   {
     name: "Pomodoro",
@@ -82,6 +83,20 @@ const projects = [
     thumbnail: portfolio_page,
     codepenUrl: "",
     githubUrl: "https://github.com/sxtnkyl/portfolio_page"
+  }
+];
+
+const otherProjects = [
+  {
+    name: "Markdown Previewer",
+    summary: "A Markdown editor with realtime preview",
+    description:
+      "A simple Markdown previewer. Input the Markdown language in the editor side and have it converted and displayed on the previewer side.",
+    css: "#292b2c",
+    concepts: "React, Markdown, Bootstrap",
+    thumbnail: markdown_previewer,
+    codepenUrl: "https://codepen.io/sxtnkyl/pen/KEMqPb",
+    githubUrl: "https://github.com/sxtnkyl/react-markdown-fcc"
   }
 ];
 
