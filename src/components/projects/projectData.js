@@ -38,7 +38,7 @@ const projects = [
     githubUrl: "https://github.com/sxtnkyl/drumkit"
   },
   {
-    name: "HandSampler",
+    name: "Hand Sampler",
     summary: "A survey tool for quickly generating geologic soil descriptions.",
     description:
       "An exercise in Material-UI and forms. Progress through a series of questions with different submission methods and layouts to generate a soil sample name.",
